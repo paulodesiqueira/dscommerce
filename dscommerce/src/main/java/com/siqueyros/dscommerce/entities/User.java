@@ -16,13 +16,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
+    private String name;
 
     @Column(unique = true)
 
     private String email;
     private String phone;
-    private LocalDate birthData;
+    private LocalDate birthDate;
     private String password;
     //private String[] roles;
 
@@ -31,12 +31,12 @@ public class User {
 
     public User() {}
 
-    public User(Long id, String nome, String email, String phone, LocalDate birthData, String password) {
+    public User(Long id, String nome, String email, String phone, LocalDate birthDate, String password) {
         this.id = id;
-        this.nome = nome;
+        this.name = name;
         this.email = email;
         this.phone = phone;
-        this.birthData = birthData;
+        this.birthDate = birthDate;
         this.password = password;
     }
 
@@ -49,11 +49,11 @@ public class User {
     }
 
     public String getNome() {
-        return nome;
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -73,11 +73,11 @@ public class User {
     }
 
     public LocalDate getBirthData() {
-        return birthData;
+        return birthDate;
     }
 
     public void setBirthData(LocalDate birthData) {
-        this.birthData = birthData;
+        this.birthDate = birthData;
     }
 
     public String getPassword() {
@@ -97,22 +97,22 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(nome, user.nome) && Objects.equals(email, user.email) && Objects.equals(phone, user.phone) && Objects.equals(birthData, user.birthData) && Objects.equals(password, user.password);
+        return Objects.equals(id, user.id) && Objects.equals(name, user.name) && Objects.equals(email, user.email) && Objects.equals(phone, user.phone) && Objects.equals(birthDate, user.birthDate) && Objects.equals(password, user.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, email, phone, birthData, password);
+        return Objects.hash(id, name, email, phone, birthDate, password);
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", nome='" + nome + '\'' +
+                ", nome='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", birthData=" + birthData +
+                ", birthData=" + birthDate +
                 ", password='" + password + '\'' +
                 '}';
     }
